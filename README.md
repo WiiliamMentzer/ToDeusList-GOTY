@@ -2,15 +2,9 @@
 
 ### Created by William Mentzer
 
-<iframe
-    width="640"
-    height="480"
-    src="https://www.youtube.com/watch?v=qn-6uOaBo1Y"
-    frameborder="0"
-    allow="encrypted-media"
-    allowfullscreen
->
-</iframe>
+## Title Screen
+
+* [Video Here](https://www.youtube.com/watch?v=qn-6uOaBo1Y)
 
 
 ## Links
