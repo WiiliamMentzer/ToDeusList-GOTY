@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public string playerName;
 
     public int playerMaxHP;
-    public int playerHP;
+    public int playerCurrentHP;
 
     public int playerSpeed;
     public int playerAttack;

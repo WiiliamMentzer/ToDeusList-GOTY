@@ -2,36 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public enum BattleState { Start, ToDoTurn, PlayerTurn, Won, Lost }
 
 public class BattleCore : MonoBehaviour
 {
 
-    // public BattleState state;
-    // public Text toDoText;
+    public BattleState state;
+    public Text dialogueText;
 
-    // // public transform playerBattleStation;
-    // // public transform enemyBattleStation;
+    public battleHUD playerHUD;
+    public battleHUD toDoHUD;
+    // public Transform playerBattleStation;
+    // public Transform enemyBattleStation;
 
-    // // Unit playerUnit;
-    // // Unit enemyUnit;
+    PlayerStats playerUnit;
+    ToDoListStats enemyUnit;
 
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     state = BattleState.Start;
-    //     StartBattle();
-    // }
+    public GameObject playerPrefab;
+    public GameObject enemyPrefab;
 
-    // void StartBattle()
-    // {
-    //     GameObject playerOb = Instantiate(playerPrefab, playerBattleStation);
-    //     playerUnit = playerOb.GetComponent<Unit>();
+    // Start is called before the first frame update
+    void Start()
+    {
+        state = BattleState.Start;
+        StartBattle();
+    }
 
-    //     GameObject enemyOb = Instantiate(enemyPrefab, enemyBattleStation);
-    //     enemyUnit = enemyOb.GetComponent<Unit>();
+    void StartBattle()
+    {
+        // Instantiate(playerUnit, playerBattleStation);
+        // Instantiate(enemyUnit, enemyBattleStation);
+        GameObject playerOb = Instantiate(playerPrefab);
+        playerUnit = playerOb.GetComponent<PlayerStats>();
 
-    //     toDoText.text = enemyUnit.unitName;
-    // }
+        GameObject enemyOb = Instantiate(enemyPrefab);
+        enemyUnit = enemyOb.GetComponent<ToDoListStats>();
+
+        dialogueText.text = enemyUnit.toDoListName + "THE DEFILED";
+    }
 }
