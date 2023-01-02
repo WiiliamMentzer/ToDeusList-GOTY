@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BattleCore{
     public class BattleTransitionHandler : MonoBehaviour
@@ -35,7 +36,7 @@ namespace BattleCore{
             if (battleFinish == true){
                 if (timeRemaining > 0)
                 {
-                    transform.Translate(new Vector3(-100 * Time.deltaTime, 0 ,0));
+                    transform.Translate(new Vector3(-75 * Time.deltaTime, 0 ,0));
                     timeRemaining -= Time.deltaTime;
                 } else {
                     return;

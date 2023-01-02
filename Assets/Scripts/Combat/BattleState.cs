@@ -3,7 +3,8 @@ namespace BattleCore
     public enum BattleState
     {
         Beginning, 
-        PlayerTurn, 
+        PlayerTurn,
+        PlayerTransition, 
         EnemyTurn, 
         Won, 
         Lost

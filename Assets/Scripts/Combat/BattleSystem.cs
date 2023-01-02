@@ -31,6 +31,7 @@ namespace BattleCore
 
         public void OnAttackButton()
         {
+            Debug.Log("AttackChosen");
             if (_state != BattleState.PlayerTurn) return;
             StartCoroutine(PlayerAttack());
         }
@@ -55,7 +56,8 @@ namespace BattleCore
         private IEnumerator BeginBattle()
         {
             Interface.SetDialogText($"The final battle against {Enemy.Name} begins!");
-            
+            Debug.Log("BeginBattleRuns");
+            Debug.Log(_state.ToString());
             Player.StatReset();
             Enemy.StatReset();
             Enemy.ApplyEnrage(Random.Range(7,12));
@@ -68,6 +70,8 @@ namespace BattleCore
 
         private IEnumerator PlayerTurn()
         {
+            Debug.Log("PlayerTurnReached");
+            Debug.Log(_state.ToString());
             if(Player.Enrage == 0){
                 Interface.SetDialogText("You feel in safe hands knowing LearnHowToProgram has your back. Full Heal. Choose an Action.");
                 Player.Heal(Player.TotalHealth, 0);
@@ -85,10 +89,11 @@ namespace BattleCore
 
         private IEnumerator PlayerAttack()
         {
+            Debug.Log("PlayerAttackRan");
             var isDead = Enemy.Damage(0);
             if (Player.Burning > 0){
                 isDead = Enemy.Damage(Player.Attack / 2);
-                Interface.SetDialogText($"You are on fire! You deal reduced damage! Attack for {Player.Attack / 2}. Your determination stronger by the second.");
+                Interface.SetDialogText($"You are on fire! You deal reduced damage! Attack for {Player.Attack / 2}. Your determination grows stronger by the second.");
             } else {
                 isDead = Enemy.Damage(Player.Attack);
                 Interface.SetDialogText($"You attack for {Player.Attack}. You grow stronger by the second.");
@@ -96,7 +101,9 @@ namespace BattleCore
 
             Player.EnrageReduction(2);
 
-            yield return new WaitForSeconds(3f);
+            _state = BattleState.PlayerTransition;
+
+            yield return new WaitForSeconds(4f);
 
             if (isDead)
             {
@@ -123,7 +130,8 @@ namespace BattleCore
                 Interface.SetDialogText($"{Player.Name} failed to cast a fireball.");
             }
 
-        
+            _state = BattleState.PlayerTransition;
+
             yield return new WaitForSeconds(3f);
 
             if (isDead)
@@ -141,6 +149,8 @@ namespace BattleCore
         {
             Interface.SetDialogText($"ToDoList laughs at your incompetence. You cannot run.");
             audioStore.laughTrack = true;
+
+            _state = BattleState.PlayerTransition;
 
             yield return new WaitForSeconds(4f);
 
@@ -169,6 +179,8 @@ namespace BattleCore
                 Player.Heal(Player.Healing, 10);
             }
         
+            _state = BattleState.PlayerTransition;
+
             yield return new WaitForSeconds(5f);
 
             _state = BattleState.EnemyTurn;
@@ -218,6 +230,7 @@ namespace BattleCore
                 }
             }
 
+            _state = BattleState.PlayerTransition;
 
             yield return new WaitForSeconds(5f);
 
@@ -243,6 +256,8 @@ namespace BattleCore
                     transition2.battleFinish = true;
                     transition3.battleFinish = true;
                     transition4.battleFinish = true;
+                    yield return new WaitForSecondsRealtime(6f);
+                    SceneManager.LoadScene(0);  
                     break;
                 case BattleState.Lost:
                     Interface.SetDialogText("ToDoList will forever live on.");
@@ -250,6 +265,8 @@ namespace BattleCore
                     transition2.battleFinish = true;
                     transition3.battleFinish = true;
                     transition4.battleFinish = true;
+                    yield return new WaitForSecondsRealtime(6f);
+                    SceneManager.LoadScene(0);
                     break;
                 default:
                     Interface.SetDialogText("How?");
@@ -257,6 +274,8 @@ namespace BattleCore
                     transition2.battleFinish = true;
                     transition3.battleFinish = true;
                     transition4.battleFinish = true;
+                    yield return new WaitForSecondsRealtime(6f);
+                    SceneManager.LoadScene(0);
                     break;
             }
             yield break;

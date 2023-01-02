@@ -11,7 +11,7 @@ namespace BattleCore
         [SerializeField] private Nameplate playerNameplate;
         [SerializeField] private Nameplate enemyNameplate;
         [SerializeField] private Text dialogText;
-        [SerializeField] private GameObject PauseScreen;
+        // [SerializeField] private GameObject PauseScreen;
 
         public void Initialize(Fighter player, Fighter enemy)
         {
@@ -24,15 +24,15 @@ namespace BattleCore
             dialogText.text = text;
         }
 
-        public void ShowPauseMenu()
-        {
-            PauseScreen.SetActive(true);
-        }
+        // public void ShowPauseMenu()
+        // {
+        //     PauseScreen.SetActive(true);
+        // }
         
-        public void HidePauseMenu()
-        {
-            PauseScreen.SetActive(false);
-        }
+        // public void HidePauseMenu()
+        // {
+        //     PauseScreen.SetActive(false);
+        // }
 
         private void InitializePlayer(Fighter fighter)
         {
