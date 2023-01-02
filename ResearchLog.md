@@ -4,13 +4,13 @@
 -------------
 * 9:05AM - Added BattleScene UI mockup and started playing in objects into view
 
-* [MISSING LOGS]
+[MISSING LOGS]
 * Added: Test Scene for new state script
 * Researched: State Machine for BattleCore Extension (didnt apply until 12/19)
 
 [12/17/2022]
 -------------
-* [UI Development]
+[UI Development]
 * 8AM - Looking into previous final fantasy games UI and begining to acquire assets.
 * 9AM - Final Fantasy assets found and in GIMP trying to upscale/ re-use them
 * 10AM - Did not work propely so had to make UI from scratch
@@ -21,7 +21,7 @@
 
 [12/18/2022]
 -------------
-* [Sound Sourcing and Scripting]
+[Sound Sourcing and Scripting]
 * 8AM - Sourcing Final Fantasy Music through hardware emulation
 * 9AM - Compiling Music to process in DAW
 * 10AM - In DAW adding limiters and minor 
@@ -34,7 +34,7 @@
 
 [12/19/2022]
 -------------
-* [Battle Core Updates]
+[Battle Core Updates]
 * 12am - Re-Watching "How to code a simple state machine" to build off of BattleCore
 * 1am - Applying State Machine to BattleCore and testing for compile errors
 * 2am - Compile errors, commented out code to work during class today.
@@ -42,7 +42,7 @@
 
 [12/20/2022]
 -------------
-* [BattleCore Finished]
+[BattleCore Finished]
 * 8AM - Began rewriting parts of BattleCore to check for any errors and begin start of Spells, commented out to not have compile errors.
 * 9AM - Attack and Heal functions fully working - bug with attack and heal actions (can spam click and break the game, will need to fix)
 * 10AM - Changing attack and heal values on both Heal and Attack to see what would be a reasonable ammount for length of gameplay
@@ -55,7 +55,7 @@
 
 [12/21/2022]
 -------------
-* [AI Day and Audio Implementation]
+[AI Day and Audio Implementation]
 * 8AM - ToDoList AI whiteboarding session.
 * 9AM - Decided to add AI to BattleSystem as thats where the attack originate in scripts. Began adding If Else for ToDoList Heal / Attack.
 * 10AM - Added Run button to UI for funny quip.
@@ -68,7 +68,7 @@
 
 [12/22/2022]
 -------------
-* [PRESENTATION DAY AND LAST MINUTE GRIND]
+[PRESENTATION DAY AND LAST MINUTE GRIND]
 * 2AM -Began adding Engrage Mechanic to enemy and player.
 * 3AM - Added debuff to FireSpell that cuts attack damage in half
 * 4AM - Added Fireball to ToDoList AI so now they can fireball too.
@@ -85,7 +85,7 @@
 
 [12/23/2022]
 -------------
-* [Clean Up and Submission]
+[Clean Up and Submission]
 * 8AM - Explorting to WebGL. Series of bugs found and errors with UI implementation.
 * 9AM - Uploaded to Itch.IO for testing purposed, still unfunctional.
 * 10AM - Fixed error with cubes not closing correctly after battle is finished.
@@ -95,14 +95,14 @@
 
 [12/26/2022]
 -------------
-* [Credits WIP]
+[Credits WIP]
 * 8AM - Working on credits with new Credits scene.
 * 9AM - Using previous scripts to create environment. Creating a png for thank you picture.
 * 10AM - Choosing music is hard, adding various music tracks.
 
 [12/28/2022]
 -------------
-* [Slight bug fixes]
+[Slight bug fixes]
 * 8AM - Fixed error with ToDoListWalkCycle not in legacy mode. By removing it entirely as its unused.
 * 9AM - Erorr with audio handler not changing battle music not working. Kefka laugh will not randomly play anymore after removing part of ToDoList AI.
 * 10AM - Fixed error with Engrage and Mana not resetting on session restart.
